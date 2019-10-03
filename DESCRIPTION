@@ -1,0 +1,20 @@
+Package: shinyhighlightr
+Title: Create Text Markup Input Controls with 'Shiny'
+Version: 0.1.0
+Authors@R: person('Stefanie Schneider', email = 'stefanie.schneider@itg.uni-muenchen.de', role = c('cre', 'aut'), comment = c(ORCID = "0000-0003-4915-6949"))
+Maintainer: Stefanie Schneider <stefanie.schneider@itg.uni-muenchen.de>
+Description: Create text markup input controls to highlight patterns in text values. Two input fields are created: one to specify the expression to be marked; another where this expression is marked in unstructured text values, e.g., test cases for a regular expression.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+URL: https://github.com/stefanieschneider/shinyhighlightr
+BugReports: https://github.com/stefanieschneider/shinyhighlightr/issues
+Suggests: 
+    testthat (>= 2.1.0),
+    roxygen2
+Imports: 
+    shiny (>= 1.0.0),
+    htmltools (>= 0.2.6)
+Depends:
+    R (>= 3.0)
