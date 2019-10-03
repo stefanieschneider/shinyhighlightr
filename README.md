@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# shinyhighlightr <img src="man/figures/example.gif" align="right" width="250" />
+# shinyhighlightr <img src="man/figures/example.gif" align="right" width="225" />
 
 [![Lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis CI build
