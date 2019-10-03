@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# shinyhighlightr <img src="man/figures/example.gif" align="right" width="250" />
+# shinyhighlightr <img src="man/figures/example.gif" align="right" width="225" />
 
 [![Lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis CI build
@@ -15,15 +15,15 @@ This R package creates text markup input controls to highlight patterns
 in text values. It is highly inspired by the online regular expression
 tester and debugger [Regex101](https://regex101.com/). Two input fields
 are created: one to specify the expression to be marked; another where
-this expression is marked in unstructured text values, e.g., test cases
-for a regular expression. shinyhighlightr is build on top of
+this expression is actually marked in unstructured text values, e.g.,
+test cases for regular expressions. shinyhighlightr is build on top of
 [CodeMirror](https://github.com/codemirror/CodeMirror), a versatile text
 editor implemented in JavaScript.
 
 ## Installation
 
 You can install the development version of shinyhighlightr from
-[GitHub](https://github.com/stefanieschneider/shinyhighlightr) use:
+[GitHub](https://github.com/stefanieschneider/shinyhighlightr):
 
 ``` r
 # install.packages("devtools")
