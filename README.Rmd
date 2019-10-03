@@ -17,7 +17,7 @@ options(width = "100")
 require(shinyhighlightr)
 ```
 
-# shinyhighlightr <img src="man/figures/example.gif" align="right" width="225" />
+# shinyhighlightr <img src="man/figures/example.gif" align="right" width="250" />
 
 [![Lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 [![Travis CI build status](https://travis-ci.org/stefanieschneider/shinyhighlightr.svg?branch=master)](https://travis-ci.org/stefanieschneider/shinyhighlightr)
