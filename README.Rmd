@@ -65,6 +65,8 @@ if (interactive()) {
 }
 ```
 
+Please note that `updateTextMarkupInput` is not implemented at the moment.
+
 ## Contributing
 
 Please report issues, feature requests, and questions to the [GitHub issue tracker](https://github.com/stefanieschneider/shinyhighlightr/issues). We have a [Contributor Code of Conduct](https://github.com/stefanieschneider/shinyhighlightr/blob/master/CODE_OF_CONDUCT.md). By participating in shinyhighlightr you agree to abide by its terms.

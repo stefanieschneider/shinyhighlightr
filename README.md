@@ -59,6 +59,9 @@ if (interactive()) {
 }
 ```
 
+Please note that `updateTextMarkupInput` is not implemented at the
+moment.
+
 ## Contributing
 
 Please report issues, feature requests, and questions to the [GitHub
