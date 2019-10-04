@@ -5,3 +5,8 @@ shinyInputLabel <- function(inputId, label = NULL) {
     class = if (is.null(label)) "shiny-label-null"
   )
 }
+
+#' @note taken from shiny:::utils
+dropNulls <- function(x) {
+  x[!vapply(x, is.null, FUN.VALUE = logical(1))]
+}

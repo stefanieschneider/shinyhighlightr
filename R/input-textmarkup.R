@@ -54,13 +54,14 @@
 #' @export
 textMarkupInput <- function(inputId, labels, values = list("", ""),
     width = NULL, height = NULL, placeholders = NULL) {
-  inputIdArea <- paste0(inputId, "TestCases")
+  inputIdExpression <- paste0(inputId, "Expression")
+  inputIdTestCases <- paste0(inputId, "TestCases")
 
   if (length(values[[2]]) > 1)
     values[[2]] <- paste(values[[2]], collapse = "\n")
 
-  values[[1]] <- restoreInput(inputId, values[[1]])
-  values[[2]] <- restoreInput(inputIdArea, values[[2]])
+  values[[1]] <- restoreInput(inputIdExpression, values[[1]])
+  values[[2]] <- restoreInput(inputIdTestCases, values[[2]])
 
   style <- paste(
     if (!is.null(width))
@@ -77,17 +78,17 @@ textMarkupInput <- function(inputId, labels, values = list("", ""),
 
   div_container <- div(
     class = "form-group shiny-input-container codemirror-editor",
-    style = paste(
+    id = inputId, style = paste(
       if (!is.null(width))
         paste0("width: ", validateCssUnit(width), ";")
     ),
-    shinyInputLabel(inputId, labels[1]),
+    shinyInputLabel(inputIdExpression, labels[1]),
     tags$input(
-      id = inputId, type = "text", class="form-control",
-      value = values[[1]], placeholder = placeholders[1]),
-    shinyInputLabel(inputIdArea, labels[2]),
+      id = inputIdExpression, class = "form-control", type = "text",
+      placeholder = placeholders[1], value = values[[1]]),
+    shinyInputLabel(inputIdTestCases, labels[2]),
     tags$textarea(
-      id = inputIdArea, class = "form-control",
+      id = inputIdTestCases, class = "form-control", type = "text",
       placeholder = placeholders[2], style = style, values[[2]]
     )
   )
@@ -97,7 +98,8 @@ textMarkupInput <- function(inputId, labels, values = list("", ""),
       name = "codemirror", version = "5.49.0",
       package = "shinyhighlightr", src = "assets",
       script = c(
-        "js/codemirror.js", "js/codemirror-bindings.js"
+        "js/codemirror.js", "js/codemirror-bindings.js",
+        "js/addon/placeholder.js"
       ),
       stylesheet = "css/codemirror.css"
     ), append = TRUE

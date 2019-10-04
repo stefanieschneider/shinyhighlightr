@@ -15,5 +15,15 @@
 #' @export
 updateTextMarkupInput <- function(session, inputId, labels = NULL,
     values = NULL, placeholders = NULL) {
-  # TODO: add update functionality
+  if (!is.null(values) && length(values[[2]]) > 1)
+    values[[2]] <- paste(values[[2]], collapse = "\n")
+
+  message <- dropNulls(
+    list(
+      labels = labels, values = values,
+      placeholders = placeholders
+    )
+  )
+
+  session$sendInputMessage(inputId, message)
 }

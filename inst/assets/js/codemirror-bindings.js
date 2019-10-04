@@ -89,6 +89,13 @@ $.extend(CodeMirrorInputBinding, {
     $(textInput).on("change keyup paste", function() {
       updateMarkers();
     })
+
+    $(textOutput).on("change keyup paste", function() {
+      editor.getDoc().setValue(textOutput.innerHTML);
+      editor.setOption("placeholder", textOutput.placeholder);
+
+      updateMarkers();
+    })
   },
   getId: function(el) {
   	return $(el).attr('id');
@@ -101,12 +108,60 @@ $.extend(CodeMirrorInputBinding, {
   },
   subscribe: function(el, callback) {
     $(el).on("change.CodeMirrorInputBinding", function(e) {
-      callback();
+      callback(false);
     });
   },
   unsubscribe: function(el) {
     $(el).off(".CodeMirrorInputBinding");
-  }
+  },
+  receiveMessage: function(el, data) {
+    var textInput = el.children[1];
+    var textOutput = el.children[3];
+
+    var labelInput = el.children[0];
+    var labelOutput = el.children[2];
+
+    if (data.hasOwnProperty('labels')) {
+      if (data.labels.length == 2) {
+        if (data.labels[0] !== null) {
+          labelInput.innerHTML = data.labels[0];
+        }
+
+        if (data.labels[1] !== null) {
+          labelOutput.innerHTML = data.labels[1];
+        }
+      }
+    }
+
+    if (data.hasOwnProperty('values')) {
+      if (data.values.length == 2) {
+        if (data.values[0] !== null) {
+          textInput.value = data.values[0];
+        }
+
+        if (data.values[1] !== null) {
+          textOutput.innerHTML = data.values[1];
+        }
+      }
+    }
+
+    if (data.hasOwnProperty('placeholders')) {
+      if (data.placeholders.length == 2) {
+        if (data.placeholders[0] !== null) {
+          textInput.placeholder = data.placeholders[0];
+        }
+
+        if (data.placeholders[1] !== null) {
+          textOutput.placeholder = data.placeholders[1];
+        }
+      }
+    }
+
+    $(textInput).keyup();
+    $(textOutput).keyup();
+
+    $(el).trigger('change');
+  },
 });
 
 Shiny.inputBindings.register(CodeMirrorInputBinding);
