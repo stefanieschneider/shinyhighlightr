@@ -83,6 +83,7 @@ $.extend(CodeMirrorInputBinding, {
       textOutput.innerHTML = text;
       textOutput.value = text;
 
+      $(el).trigger('change');
       updateMarkers();
     })
 

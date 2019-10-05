@@ -41,10 +41,10 @@ if (interactive()) {
 
   ui <- fluidPage(
     textMarkupInput(
-      inputId = "highlight",
-      labels = c("Expression", "Test Cases"),
+      inputId = "highlight", labels = c("Expression", "Test Cases"),
+      placeholder = c("Define Expression", "Define Test Cases"),
       values = list(
-        "[0-9]{4}",
+        "[1-2]{1}[0-9]{3}",
         c(
           "19th century", "1855",
           "between 1905 and 1910"
@@ -63,7 +63,4 @@ if (interactive()) {
 }
 \seealso{
 \link{updateTextMarkupInput}
-
-Other input elements: \code{\link{updateTextMarkupInput}}
 }
-\concept{input elements}
