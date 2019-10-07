@@ -1,9 +1,9 @@
 {
   "input": {
     "highlightExpression": "[1-2]{1}[7-8]{1}[0-9]{2}",
-    "highlightTestCases": "19th century\n1855\nbetween 1905 and 1910",
+    "highlightTestCases": "1750\n18th century",
     "reset_expression": 1,
-    "reset_test_cases": 0
+    "reset_test_cases": 1
   },
   "output": {
 

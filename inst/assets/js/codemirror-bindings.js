@@ -78,12 +78,10 @@ $.extend(CodeMirrorInputBinding, {
 
     editor.on("change", function(el) {
       var text = el.getDoc().getValue();
+
       Shiny.setInputValue(textOutput.id, text);
-
       textOutput.innerHTML = text;
-      textOutput.value = text;
 
-      $(el).trigger('change');
       updateMarkers();
     })
 
@@ -99,12 +97,17 @@ $.extend(CodeMirrorInputBinding, {
     })
   },
   getId: function(el) {
-  	return $(el).attr('id');
+    return $(el).attr('id');
   },
   getValue: function(el) {
-    return null;
+    var values = [
+      el.children[1].value,
+      el.children[3].innerHTML
+    ];
+
+    return values;
   },
-  setValue: function(el, value) {
+  setValue: function(el, values) {
     return null;
   },
   subscribe: function(el, callback) {
