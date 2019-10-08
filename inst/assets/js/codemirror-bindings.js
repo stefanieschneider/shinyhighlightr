@@ -47,9 +47,18 @@ $.extend(CodeMirrorInputBinding, {
 
     function updateMarkers() {
       removeMarkers(); // remove previous markers
-      var pattern = textInput.value;
 
       try {
+        var pattern = new SRL(textInput.value);
+        console.log(pattern);
+        pattern = pattern._regEx.join("");
+      } catch(exception) {
+        var pattern = textInput.value;
+      }
+
+      try {
+        $(textInput).attr('pattern', pattern);
+
         if (pattern.length > 0) {
           pattern = new RegExp(pattern, "igm");
 
@@ -71,8 +80,8 @@ $.extend(CodeMirrorInputBinding, {
             }
           });
         }
-      } catch(error) {
-        // potential error message
+      } catch(exception) {
+
       }
     }
 
@@ -101,7 +110,7 @@ $.extend(CodeMirrorInputBinding, {
   },
   getValue: function(el) {
     var values = [
-      el.children[1].value,
+      el.children[1].attr('pattern'),
       el.children[3].innerHTML
     ];
 

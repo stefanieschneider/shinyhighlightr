@@ -97,8 +97,8 @@ textMarkupInput <- function(inputId, labels, values = list("", ""),
       name = "codemirror", version = "5.49.0",
       package = "shinyhighlightr", src = "assets",
       script = c(
-        "js/codemirror.js", "js/codemirror-bindings.js",
-        "js/addon/placeholder.js"
+        "js/srl-bundle.js", "js/codemirror.js",
+        "js/codemirror-bindings.js", "js/addon/placeholder.js"
       ),
       stylesheet = "css/codemirror.css"
     ), append = TRUE
