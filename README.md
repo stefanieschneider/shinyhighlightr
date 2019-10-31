@@ -16,7 +16,7 @@ in text values. It is highly inspired by the online regular expression
 tester and debugger [Regex101](https://regex101.com/). Two input fields
 are created: one to specify the expression to be marked; another where
 this expression is actually marked, e.g., in test cases for regular
-expressions. shinyhighlightr is build on top of
+expressions. shinyhighlightr is built on top of
 [CodeMirror](https://github.com/codemirror/CodeMirror), a versatile text
 editor implemented in JavaScript. [Simple Regex
 Language](https://simple-regex.com/) strings can be used as input. There
